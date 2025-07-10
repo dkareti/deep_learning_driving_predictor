@@ -62,6 +62,8 @@ def generate_data_point(seq_len = 50):
 
     return features, label
 
+######### PRE-PROCESS THE DATA ###########
+
 def create_dataset(num_sequences = 500, sequence_len=50):
     X, y = [], []
 
