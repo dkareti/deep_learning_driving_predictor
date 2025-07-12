@@ -4,10 +4,10 @@ import random
 from sklearn.model_selection import train_test_split
 
 #define an enum
-BEHVIORS = ['accelerate', 'brake' 'turn_left', 'turn_right', 'cruise']
+BEHAVIORS = ['accelerate', 'brake', 'turn_left', 'turn_right', 'cruise']
 
 #create a dictionary
-store_labels = {b : index for index, b in enumerate(BEHVIORS)}
+store_labels = {b : index for index, b in enumerate(BEHAVIORS)}
 
 #assuming we calculate each data point at 20 Hz for 10 sec
 #####CALCULATION#######
@@ -15,7 +15,7 @@ store_labels = {b : index for index, b in enumerate(BEHVIORS)}
 # 10 sec / 0.2 sec = 50 sequences
 #######################
 def generate_data_point(seq_len = 50):
-    action = random.choice(BEHVIORS)
+    action = random.choice(BEHAVIORS)
 
     if action == 'accelerate':
         accel = np.random.normal(2.0, 0.5, seq_len)
