@@ -23,4 +23,5 @@ def build_model(input_shape, num_classes):
     ])
 
     #compile the model
-    model.compile()
+    model.compile(loss='sparse_categorical_crossentropy', optimizer='adam')
+    return model
