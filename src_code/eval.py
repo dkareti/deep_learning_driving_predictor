@@ -12,5 +12,5 @@ def evaluate_model():
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
-    loss, acc = model.evaluate(X_test, y_test)
-    print(f'\n\n Test Accuracy: {acc:.2f}')
+    loss = model.evaluate(X_test, y_test)
+    print(f'\n\n Loss: {loss}')
