@@ -9,7 +9,7 @@ from src_code.model import build_model
 ####
 #### -----------------------------------------------
 
-def train_model():
+def train_model(num_epochs = 10, num_batch = 32 ):
     X_train, X_test, y_train, y_test = get_train_test_data()
 
     #### ++++++++++++++++++++++++++++++++++++++++++
@@ -28,6 +28,6 @@ def train_model():
 
     model = build_model(input_shape=X_train.shape[1:], num_classes=5 )
 
-    model.fit(X_train, y_train, epochs=10, batch_size=32)
+    model.fit(X_train, y_train, epochs=num_epochs, batch_size=num_batch)
     model.save("saved_models/behav_model.keras")
     return model
