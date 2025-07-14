@@ -1,8 +1,22 @@
 from src_code.train import train_model
+from src_code.generate_data import get_train_test_data
 from sklearn.metrics import classification_report, confusion_matrix
 
-def evaluate_model():
-    X_test, y_test, model = train_model()
+def evaluate_model(stored_model=None):
+    if(stored_model is not None):
+        model = stored_model
+    else:
+        model = train_model()
+
+    #### ++++++++++++++++++++++++++++++++++
+    #### Get X_train, X_test, y_train_y_test
+    ###
+    #### We can gather these sets because of the 
+    ####    random state in the get_train_test func.
+    #### This can produce reproducable results.
+    #### -------------------------------------
+
+    X_train, X_test, y_train, y_test = get_train_test_data()
     
 
     #make predictions

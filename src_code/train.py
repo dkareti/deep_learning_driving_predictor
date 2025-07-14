@@ -30,4 +30,4 @@ def train_model():
 
     model.fit(X_train, y_train, epochs=10, batch_size=32)
     model.save("saved_models/behav_model.keras")
-    return X_test, y_test, model
+    return model

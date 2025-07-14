@@ -12,5 +12,6 @@ model_path = "saved_models/behav_model.h5"
 if os.path.exists(model_path):
     print('Loading the Saved Model!')
     model = load_model(model_path)
+    evaluate_model(model)
 else:
     evaluate_model()
