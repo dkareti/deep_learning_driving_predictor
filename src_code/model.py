@@ -13,7 +13,8 @@ import keras
 
 def build_model(input_shape, num_classes):
     model = Sequential([
-        keras.layers.Conv1D(64, kernel_size=3, activation='relu', input_shape=input_shape),
+        keras.layers.Input(shape=(input_shape)),
+        keras.layers.Conv1D(64, kernel_size=3, activation='relu'),
         keras.layers.MaxPooling1D(2),
         keras.layers.Dropout(0.3),
         keras.layers.LSTM(64),
