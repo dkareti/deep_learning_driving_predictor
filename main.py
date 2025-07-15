@@ -7,11 +7,16 @@ from src_code.eval import evaluate_model
 ##### Checks if model exists in model path
 ####
 #### -----------------------------------
-model_path = "saved_models/behav_model.h5"
+model_path = "saved_models/behav_model.keras"
 
 if os.path.exists(model_path):
     print('Loading the Saved Model!')
     model = load_model(model_path)
-    evaluate_model(model)
+
+    result = evaluate_model(model)
+    for k, v in result.items():
+        print(f'{k} is: \n\n {v}\n')
 else:
-    evaluate_model()
+    result = evaluate_model()
+    for k, v in result.items():
+        print(f'{k} is: \n\n {v}\n')

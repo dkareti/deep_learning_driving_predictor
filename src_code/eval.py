@@ -22,9 +22,17 @@ def evaluate_model(stored_model=None):
     #make predictions
     y_pred = model.predict(X_test).argmax(axis=1)
 
-    #metrics
-    print(confusion_matrix(y_test, y_pred))
-    print(classification_report(y_test, y_pred))
+    # Evaluate
+    eval_results = model.evaluate(X_test, y_test, verbose=0)
+    loss = eval_results[0] if isinstance(eval_results, (list, tuple)) else eval_results
 
-    loss = model.evaluate(X_test, y_test)
-    print(f'\n\n Loss: {loss}')
+
+    # Metrics
+    c = confusion_matrix(y_test, y_pred)
+    cl = classification_report(y_test, y_pred)
+
+    return {
+        "Confusion Matrix": c,
+        "Classification Report": cl,
+        "Loss": loss
+    }
