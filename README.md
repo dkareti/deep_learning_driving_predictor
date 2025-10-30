@@ -45,4 +45,9 @@ The model combines:
 
 2. Run the program:
 
-`python3 main.py`
+`python main.py`
+
+
+# PRIOR INSTRUCTIONS
+---
+* Run `source /Users/danielkareti/.venvs/tf311/bin/activate` to change the environment

@@ -2,3 +2,5 @@ numpy
 scikit-learn
 tensorflow
 keras
+pandas
+flask
