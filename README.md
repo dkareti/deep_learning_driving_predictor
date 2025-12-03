@@ -51,3 +51,4 @@ The model combines:
 # PRIOR INSTRUCTIONS
 ---
 * Run `source /Users/danielkareti/.venvs/tf311/bin/activate` to change the environment
+* To deactivate the environment run `deactivate`
